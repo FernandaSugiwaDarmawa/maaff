@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permintaan Maaf</title>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://example.com/path/to/your/background-image.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    #container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9); /* Ubah warna latar belakang kontainer sesuai kebutuhan */
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #question1, #question2 {
+      display: none;
+    }
+
+    #noButton, #yesButton {
+      position: relative;
+      top: 0;
+      left: 0;
+      transition: top 0.5s, left 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <h1>Maaff Yaa...</h1>
+
+    <div id="question1">
+      <p>Apakah Anda bersedia memaafkan saya?</p>
+      <button onclick="tidakLanjut()">Tidak</button>
+      <button onclick="lanjutkan()">Iya</button>
+    </div>
+
+    <div id="question2">
+      <p>Asikk dimaafin. Ayo touring lagi part 2 dari hasil narik ku minggu ini yaa!!</p>
+      <button onclick="redirectYouTube()">Lanjutkan</button>
+    </div>
+
+    <button id="noButton" onmousemove="moveButton('noButton')">Tidak</button>
+    <button id="yesButton" onclick="lanjutkan()">Iya</button>
+  </div>
+
+  <script>
+    function tidakLanjut() {
+      var question1 = document.getElementById('question1');
+      var question2 = document.getElementById('question2');
+      var noButton = document.getElementById('noButton');
+      var yesButton = document.getElementById('yesButton');
+
+      // Jika opsi "Tidak" dipilih, sembunyikan pertanyaan pertama
+      question1.style.display = 'none';
+
+      // Menyembunyikan tombol "Tidak" dan "Iya"
+      noButton.style.display = 'none';
+      yesButton.style.display = 'none';
+    }
+
+    function lanjutkan() {
+      var question1 = document.getElementById('question1');
+      var question2 = document.getElementById('question2');
+      var noButton = document.getElementById('noButton');
+      var yesButton = document.getElementById('yesButton');
+
+      // Jika opsi "Iya" dipilih, sembunyikan pertanyaan pertama dan tampilkan pertanyaan kedua
+      question1.style.display = 'none';
+      question2.style.display = 'block';
+
+      // Menyembunyikan tombol "Tidak" dan "Iya"
+      noButton.style.display = 'none';
+      yesButton.style.display = 'none';
+    }
+
+    function moveButton(buttonId) {
+      var button = document.getElementById(buttonId);
+      var newX = Math.random() * window.innerWidth;
+      var newY = Math.random() * window.innerHeight;
+
+      button.style.left = newX + 'px';
+      button.style.top = newY + 'px';
+    }
+
+    function redirectYouTube() {
+      // Arahkan ke video YouTube setelah mengklik "Lanjutkan"
+      window.location.href = 'https://youtu.be/dt4Ueda_h6Y?si=6kkAphNqknwaVhSm';
+    }
+  </script>
+
+</body>
+</html>
